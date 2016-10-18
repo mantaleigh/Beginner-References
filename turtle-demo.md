@@ -64,7 +64,7 @@ Write your name using the turtle!
 
 ### Challenge 3:
 
-Create some flowers like the one I did before! Mine isn't very good, though. Try to make it look more realistic!
+Create some flowers like the one I did below! Mine isn't very good, though. Try to make it look more realistic!
 
 ![Red "flower"](http://i.imgur.com/eWwdPH3.png "Red 'flower'")
 
