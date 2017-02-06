@@ -33,7 +33,7 @@ def about():
     return 'About Page'
 
 @app.route('/hello/<name>')
-def hello(name):
+def greeting(name):
 	# give the user a personalized greeting
     return '<h1>Hello, %s!</h1>' % name
 ```
