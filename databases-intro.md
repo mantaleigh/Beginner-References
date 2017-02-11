@@ -1,5 +1,7 @@
 # Intro to Databases References and Code
 
+Basically a condensed version of an early lecture from Wellesley CS304: http://cs.wellesley.edu/~cs304/lectures/03-MySQL-Admin-and-DDL/ (thanks, Scott!)
+
 ## Example DDL: 
 
 ```sql
@@ -48,7 +50,6 @@ insert into vet_pet(cid,species,name) values
        
 -- Inserting only one row: 
 insert into vet_pet(cid,species,name,sex) values (2,'dog','Molly','female');
-
 ```
 
 ## Updating: 
@@ -72,7 +73,66 @@ DELETE FROM customer WHERE cid=1;
 
 ## Queries: 
 
+### Basic select statements
+```sql 
+select * from vet_owner; 
 
+select name from vet_pet;
+
+SELECT name,email,balance
+FROM vet_owner
+WHERE balance > 0;
+```
+
+### More select statements
+
+#### All Pets
+```sql
+SELECT name,breed,weight
+FROM pets;
+All Heavy Pets
+```
+
+#### Heavy Pets
+```sql
+SELECT name,breed,weight
+FROM pets
+WHERE weight > 50
+```
+
+#### Breed Average Weight
+```sql
+SELECT breed,avg(weight) -- using an aggregate function
+FROM pets
+GROUP BY breed
+Heavy Breeds
+```
+
+#### Choose among groups using a HAVING clause
+```sql
+SELECT breed,avg(weight)
+FROM pets
+GROUP BY breed
+HAVING avg(weight) > 50
+```
+
+### Sorting
+
+#### Breeds in alphabetical order (ascending)
+```sql
+SELECT breed,avg(weight)
+FROM pets
+GROUP BY breed
+ORDER BY breed asc
+```
+
+#### Breeds listed in descending order of weight
+```sql
+SELECT breed,avg(weight)
+FROM pets
+GROUP BY breed
+ORDER BY avg(weight) desc
+```
 
 ## MySQLdb Example Code:
 
