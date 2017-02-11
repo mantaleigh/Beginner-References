@@ -135,11 +135,47 @@ ORDER BY avg(weight) desc
 ```
 
 ## MySQLdb Example Code:
+```python
+#!/usr/bin/python
 
+import MySQLdb
+
+database = "CODINGGROUND"
+username = 'root'
+password = 'root'
+
+# Open database connection
+db = MySQLdb.connect(unix_socket='/home/cg/mysql/mysql.sock', host='localhost', user=username, passwd=password, db=database )
+
+# prepare a cursor object using cursor() method
+cursor = db.cursor(MySQLdb.cursors.DictCursor)
+
+sql = "select * from users"
+
+try:
+   cursor.execute(sql)
+   results = cursor.fetchall()
+   print "<table style='width:100%'>"
+   for row in results:
+      id   = row["id"]
+      name = row["name"]
+      age  = row["age"]
+      sex  = row["sex"]
+      print "<tr><td>%d</td><td>%s</td><td>%d</td><td>%s</td></tr>"%  (id, name, age, sex)
+
+   print "</table>"
+except:
+   print "Error: unable to fecth data"
+
+db.close()
+```
+
+Run here: http://www.tutorialspoint.com/python_mysql_online.php
 
 ## Things I won't cover: 
 
 * Most of the things in this lesson from CS304: http://cs.wellesley.edu/~cs304/lectures/04-MySQL-DML/
 * Installing & setting up MySQL
+* Maybe some other stuff you wish I would have thought to tell you or had time to tell you ¯\_(ツ)_/¯
 
 
