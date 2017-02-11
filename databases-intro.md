@@ -2,6 +2,8 @@
 
 Basically a condensed version of an early lecture from Wellesley CS304: http://cs.wellesley.edu/~cs304/lectures/03-MySQL-Admin-and-DDL/ (thanks, Scott!)
 
+Slides: https://drive.google.com/file/d/0BxoZvjkjdnucbTFDOFFPMnBkUVE/view?usp=sharing
+
 ## Example DDL: 
 
 ```sql
