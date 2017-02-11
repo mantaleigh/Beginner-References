@@ -19,12 +19,62 @@ create table vet_owner(
 
 drop table if exists vet_pet;
 create table vet_pet(
-       cid integer,             -- key in owner
+       cid integer,             -- refers to the key in owner
        species enum('dog','cat','rabbit','iguana','hamster','gerbil','other'),
-       other varchar(50),       -- "snakes, why did it have to be snakes?"
+       other varchar(50),
        name varchar(50),
        birthday date,
        sex enum('male','female'),
        neutered enum('y','n')
        );
 ```
+
+## Inserting: 
+
+```sql
+insert into vet_owner(cid,name,address,email,phone) values
+       (1,'Homer Simpson','Springfield','','555-1234'),
+       (2,'Bill Clinton','Chappaqua, NY','ex-pres@hotmail.com','555-0000'),
+       (3,'Barack Obama','Chicago','president@whitehouse.gov','555-5555'),
+       (4,'Old MacDonald','Vermont','eieio@gmail.com','555-1234');
+
+insert into vet_pet(cid,species,name) values
+       (1,'dog','Santa''s Little Helper'),
+       (1,'cat','Snowball'),
+       (1,'cat','Snowball II'),
+       (2,'dog','Buddy'),
+       (3,'dog','Bo'),
+       (4,'other','Dolly Llama');
+       
+-- Inserting only one row: 
+       insert into vet_pet(cid,species,name,sex) values (2,'dog','Molly','female');
+```
+
+## Updating: 
+
+```sql 
+-- this will update Bo
+UPDATE pet
+SET neutered = 'Y'
+WHERE cid=3 AND name='Bo';
+
+-- if we had a unique pet id, the WHERE statement here would be simpler
+```
+
+## Deleting:
+
+Homer decides to take his vets to a differnt vet:
+```sql 
+DELETE FROM pets WHERE cid=1;
+DELETE FROM customer WHERE cid=1;
+```
+
+## Queries: 
+
+
+
+## MySQLdb Example Code:
+
+
+## Things I didn't cover: 
+* Referential integrity/keys/
