@@ -47,7 +47,8 @@ insert into vet_pet(cid,species,name) values
        (4,'other','Dolly Llama');
        
 -- Inserting only one row: 
-       insert into vet_pet(cid,species,name,sex) values (2,'dog','Molly','female');
+insert into vet_pet(cid,species,name,sex) values (2,'dog','Molly','female');
+
 ```
 
 ## Updating: 
@@ -63,7 +64,7 @@ WHERE cid=3 AND name='Bo';
 
 ## Deleting:
 
-Homer decides to take his vets to a differnt vet:
+Homer decides to take his vets to a different vet:
 ```sql 
 DELETE FROM pets WHERE cid=1;
 DELETE FROM customer WHERE cid=1;
@@ -76,5 +77,9 @@ DELETE FROM customer WHERE cid=1;
 ## MySQLdb Example Code:
 
 
-## Things I didn't cover: 
-* Referential integrity/keys/
+## Things I won't cover: 
+
+* Most of the things in this lesson from CS304: http://cs.wellesley.edu/~cs304/lectures/04-MySQL-DML/
+* Installing & setting up MySQL
+
+
