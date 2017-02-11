@@ -176,6 +176,8 @@ Run here: http://www.tutorialspoint.com/python_mysql_online.php
 
 * Most of the things in this lesson from CS304: http://cs.wellesley.edu/~cs304/lectures/04-MySQL-DML/
 * Installing & setting up MySQL
+* Preventing SQL injection vulnerabilities (!!! important if you're putting input from the user into your db - but no time)
+ - https://xkcd.com/327/
 * Maybe some other stuff you wish I would have thought to tell you or had time to tell you ¯\_(ツ)_/¯
 
 
